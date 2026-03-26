@@ -1,0 +1,92 @@
+[
+{
+	"uri": "/my-production-ready-containerized-three-tier-on-aws/",
+	"title": "My Production Ready Containerized 3 Tier on AWS",
+	"tags": [],
+	"description": "",
+	"content": "Architecture Overview 1. Design network architecture and create resources network 2. Design security groups architecture and create security groups 3. Create a database and subnet group 4. Create an Application Load Balancer 5. Create an ECS Cluster for backend 6. Deploy frontend application using S3 and CloudFront 7. Implement authenticate GitHub Action on AWS using OIDC Identity Provider 8. Implement GitHub Action CI/CD 9. Monitoring ECS Cluster using CloudWatch and trigger SNS "
+},
+{
+	"uri": "/my-production-ready-containerized-three-tier-on-aws/network-design/",
+	"title": "Network architecture design",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/my-production-ready-containerized-three-tier-on-aws/security-design/",
+	"title": "Security groups architecture design",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/my-production-ready-containerized-three-tier-on-aws/databases/",
+	"title": "Database Postgres Engine",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/my-production-ready-containerized-three-tier-on-aws/application-load-balancer/",
+	"title": "Application Load Balancer",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/my-production-ready-containerized-three-tier-on-aws/ecs-cluster/",
+	"title": "ECS Cluster for backend service",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/my-production-ready-containerized-three-tier-on-aws/cloudfront-distribution/",
+	"title": "Deploy frontend application using S3 and CloudFront",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/my-production-ready-containerized-three-tier-on-aws/authenticate-github-action/",
+	"title": "Authenticate Github Action with OIDC ",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/my-production-ready-containerized-three-tier-on-aws/github-action-cicd/",
+	"title": "Implement Github Action CI/CD",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/my-production-ready-containerized-three-tier-on-aws/monitoring-design/",
+	"title": "Monitoring backend service container",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/",
+	"title": "",
+	"tags": [],
+	"description": "",
+	"content": "🌱 Currently learning AWS \u0026amp; System Administration\n💡 Interested in Cloud, DevOps, and Automation\n📫 Contact me: Email | LinkedIn\n✍ Blog: hs-nguyen.hashnode.dev | ✍ AWS Builder Center: https://builder.aws.com/community/@nguyensangscom\nIndependent projects ✍\nServerless Container: My Production Ready Containerized Three-Tier on AWS\n"
+},
+{
+	"uri": "/categories/",
+	"title": "Categories",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/tags/",
+	"title": "Tags",
+	"tags": [],
+	"description": "",
+	"content": ""
+}]

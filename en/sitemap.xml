@@ -2,6 +2,8 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>/my-production-ready-containerized-three-tier-on-aws/network-design/</loc>
+  </url><url>
     <loc>/my-production-ready-containerized-three-tier-on-aws/</loc>
     <xhtml:link
                 rel="alternate"
@@ -14,21 +16,25 @@
                 href="/my-production-ready-containerized-three-tier-on-aws/"
                 />
   </url><url>
-    <loc>/my-production-ready-containerized-three-tier-on-aws/network-design/</loc>
-  </url><url>
     <loc>/my-production-ready-containerized-three-tier-on-aws/security-design/</loc>
   </url><url>
     <loc>/my-production-ready-containerized-three-tier-on-aws/databases/</loc>
+  </url><url>
+    <loc>/my-production-ready-containerized-three-tier-on-aws/bastionhost/</loc>
   </url><url>
     <loc>/my-production-ready-containerized-three-tier-on-aws/application-load-balancer/</loc>
   </url><url>
     <loc>/my-production-ready-containerized-three-tier-on-aws/ecs-cluster/</loc>
   </url><url>
-    <loc>/my-production-ready-containerized-three-tier-on-aws/cloudfront-distribution/</loc>
-  </url><url>
     <loc>/my-production-ready-containerized-three-tier-on-aws/authenticate-github-action/</loc>
   </url><url>
-    <loc>/my-production-ready-containerized-three-tier-on-aws/github-action-cicd/</loc>
+    <loc>/my-production-ready-containerized-three-tier-on-aws/deploy-backend-service/</loc>
+  </url><url>
+    <loc>/my-production-ready-containerized-three-tier-on-aws/migration-db/</loc>
+  </url><url>
+    <loc>/my-production-ready-containerized-three-tier-on-aws/deploy-frontend-use-s3-and-cloudfront/</loc>
+  </url><url>
+    <loc>/my-production-ready-containerized-three-tier-on-aws/github-action-cicd-frontend/</loc>
   </url><url>
     <loc>/my-production-ready-containerized-three-tier-on-aws/monitoring-design/</loc>
   </url><url>

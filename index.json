@@ -1,70 +1,91 @@
 [
 {
-	"uri": "/my-production-ready-containerized-three-tier-on-aws/",
-	"title": "My Production Ready Containerized 3 Tier on AWS",
-	"tags": [],
-	"description": "",
-	"content": "Architecture Overview 1. Design network architecture and create resources network 2. Design security groups architecture and create security groups 3. Create a database and subnet group 4. Create an Application Load Balancer 5. Create an ECS Cluster for backend 6. Deploy frontend application using S3 and CloudFront 7. Implement authenticate GitHub Action on AWS using OIDC Identity Provider 8. Implement GitHub Action CI/CD 9. Monitoring ECS Cluster using CloudWatch and trigger SNS "
-},
-{
 	"uri": "/my-production-ready-containerized-three-tier-on-aws/network-design/",
-	"title": "Network architecture design",
+	"title": "Create a Virtual Private Cloud, Route table, Internet Gateway, Nat Gateway",
 	"tags": [],
 	"description": "",
 	"content": ""
 },
 {
+	"uri": "/my-production-ready-containerized-three-tier-on-aws/",
+	"title": "My Production Ready Containerized 3 Tier on AWS",
+	"tags": [],
+	"description": "",
+	"content": "Architecture Overview 1. Create a Virtual Private Cloud, Route table, Internet Gateway, Nat Gateway 2. Create a Security groups for ALB, ECS Cluster, BastionHost, and Database 3. Create a Subnet Group, and RDS Postgres Engine 4. Launch a BastionHost server 5. Create an Application Load Balancer and Target group 6. Create an ECR, Task Definition, and ECS Cluster 7. Implement to authenticate GitHub Actions on AWS using OIDC Identity Provider 8. Build and push docker image to ECR and deploy to ECS use Github Actions 9. Connect to BastionHost migration DB 10. Create a S3 Static Website and CloudFront for frontend 11. GitHub Action CI/CD Pipeline for frontend 12. Setup target tracking policy and monitoring backend service "
+},
+{
 	"uri": "/my-production-ready-containerized-three-tier-on-aws/security-design/",
-	"title": "Security groups architecture design",
+	"title": "Create a Security groups for ALB, ECS Cluster, BastionHost, and Database",
 	"tags": [],
 	"description": "",
 	"content": ""
 },
 {
 	"uri": "/my-production-ready-containerized-three-tier-on-aws/databases/",
-	"title": "Database Postgres Engine",
+	"title": "Create a Subnet Group, and RDS Postgres Engine",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/my-production-ready-containerized-three-tier-on-aws/bastionhost/",
+	"title": "Launch a BastionHost server",
 	"tags": [],
 	"description": "",
 	"content": ""
 },
 {
 	"uri": "/my-production-ready-containerized-three-tier-on-aws/application-load-balancer/",
-	"title": "Application Load Balancer",
+	"title": "Create an Application Load Balancer and Target group",
 	"tags": [],
 	"description": "",
 	"content": ""
 },
 {
 	"uri": "/my-production-ready-containerized-three-tier-on-aws/ecs-cluster/",
-	"title": "ECS Cluster for backend service",
-	"tags": [],
-	"description": "",
-	"content": ""
-},
-{
-	"uri": "/my-production-ready-containerized-three-tier-on-aws/cloudfront-distribution/",
-	"title": "Deploy frontend application using S3 and CloudFront",
+	"title": "Create an ECR, Task Definition, and ECS Cluster",
 	"tags": [],
 	"description": "",
 	"content": ""
 },
 {
 	"uri": "/my-production-ready-containerized-three-tier-on-aws/authenticate-github-action/",
-	"title": "Authenticate Github Action with OIDC ",
+	"title": "Implement to authenticate GitHub Actions on AWS using OIDC Identity Provider ",
 	"tags": [],
 	"description": "",
 	"content": ""
 },
 {
-	"uri": "/my-production-ready-containerized-three-tier-on-aws/github-action-cicd/",
-	"title": "Implement Github Action CI/CD",
+	"uri": "/my-production-ready-containerized-three-tier-on-aws/deploy-backend-service/",
+	"title": "Build and push docker image to ECR and deploy to ECS use Github Actions",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/my-production-ready-containerized-three-tier-on-aws/migration-db/",
+	"title": "Connect to BastionHost migration DB",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/my-production-ready-containerized-three-tier-on-aws/deploy-frontend-use-s3-and-cloudfront/",
+	"title": "Create a S3 Static Website and CloudFront for frontend",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/my-production-ready-containerized-three-tier-on-aws/github-action-cicd-frontend/",
+	"title": "GitHub Actions CI/CD Pipeline for frontend",
 	"tags": [],
 	"description": "",
 	"content": ""
 },
 {
 	"uri": "/my-production-ready-containerized-three-tier-on-aws/monitoring-design/",
-	"title": "Monitoring backend service container",
+	"title": "Setup target tracking policy and monitoring backend service",
 	"tags": [],
 	"description": "",
 	"content": ""

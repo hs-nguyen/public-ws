@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Database Postgres Engine on Nguyễn Hữu Sáng - Workshops</title>
+    <title>Create a Subnet Group, and RDS Postgres Engine on Nguyễn Hữu Sáng - Workshops</title>
     <link>/my-production-ready-containerized-three-tier-on-aws/databases/</link>
-    <description>Recent content in Database Postgres Engine on Nguyễn Hữu Sáng - Workshops</description>
+    <description>Recent content in Create a Subnet Group, and RDS Postgres Engine on Nguyễn Hữu Sáng - Workshops</description>
     <generator>Hugo -- gohugo.io</generator><atom:link href="/my-production-ready-containerized-three-tier-on-aws/databases/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Build and push docker image to ECR and deploy to ECS use Github Actions on Nguyễn Hữu Sáng - Workshops</title>
+    <title>Deploy backend services on Nguyễn Hữu Sáng - Workshops</title>
     <link>/my-production-ready-containerized-three-tier-on-aws/deploy-backend-service/</link>
-    <description>Recent content in Build and push docker image to ECR and deploy to ECS use Github Actions on Nguyễn Hữu Sáng - Workshops</description>
+    <description>Recent content in Deploy backend services on Nguyễn Hữu Sáng - Workshops</description>
     <generator>Hugo -- gohugo.io</generator><atom:link href="/my-production-ready-containerized-three-tier-on-aws/deploy-backend-service/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

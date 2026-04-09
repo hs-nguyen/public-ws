@@ -2,16 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>/vi/my-production-ready-containerized-three-tier-on-aws/</loc>
+    <loc>/vi/fullstack-ecommerce-bookshop/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/my-production-ready-containerized-three-tier-on-aws/"
+                href="/fullstack-ecommerce-bookshop/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/vi/my-production-ready-containerized-three-tier-on-aws/"
+                href="/vi/fullstack-ecommerce-bookshop/"
                 />
   </url><url>
     <loc>/vi/</loc>

@@ -2,41 +2,45 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>/my-production-ready-containerized-three-tier-on-aws/network-design/</loc>
+    <loc>/fullstack-ecommerce-bookshop/network-design/</loc>
   </url><url>
-    <loc>/my-production-ready-containerized-three-tier-on-aws/</loc>
+    <loc>/fullstack-ecommerce-bookshop/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/vi/my-production-ready-containerized-three-tier-on-aws/"
+                href="/vi/fullstack-ecommerce-bookshop/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/my-production-ready-containerized-three-tier-on-aws/"
+                href="/fullstack-ecommerce-bookshop/"
                 />
   </url><url>
-    <loc>/my-production-ready-containerized-three-tier-on-aws/security-design/</loc>
+    <loc>/fullstack-ecommerce-bookshop/security-design/</loc>
   </url><url>
-    <loc>/my-production-ready-containerized-three-tier-on-aws/databases/</loc>
+    <loc>/fullstack-ecommerce-bookshop/databases/</loc>
   </url><url>
-    <loc>/my-production-ready-containerized-three-tier-on-aws/bastionhost/</loc>
+    <loc>/fullstack-ecommerce-bookshop/application-load-balancer/</loc>
   </url><url>
-    <loc>/my-production-ready-containerized-three-tier-on-aws/application-load-balancer/</loc>
+    <loc>/fullstack-ecommerce-bookshop/ecs-cluster/</loc>
   </url><url>
-    <loc>/my-production-ready-containerized-three-tier-on-aws/ecs-cluster/</loc>
+    <loc>/fullstack-ecommerce-bookshop/deploy-backend-service/</loc>
   </url><url>
-    <loc>/my-production-ready-containerized-three-tier-on-aws/authenticate-github-action/</loc>
+    <loc>/fullstack-ecommerce-bookshop/migrations-and-seed-data/</loc>
   </url><url>
-    <loc>/my-production-ready-containerized-three-tier-on-aws/deploy-backend-service/</loc>
+    <loc>/fullstack-ecommerce-bookshop/dns-record-alb/</loc>
   </url><url>
-    <loc>/my-production-ready-containerized-three-tier-on-aws/migration-db/</loc>
+    <loc>/fullstack-ecommerce-bookshop/deploy-frontend-use-s3-and-cloudfront/</loc>
   </url><url>
-    <loc>/my-production-ready-containerized-three-tier-on-aws/deploy-frontend-use-s3-and-cloudfront/</loc>
+    <loc>/fullstack-ecommerce-bookshop/authenticate-github-action/</loc>
   </url><url>
-    <loc>/my-production-ready-containerized-three-tier-on-aws/github-action-cicd-frontend/</loc>
+    <loc>/fullstack-ecommerce-bookshop/cicd-backend/</loc>
   </url><url>
-    <loc>/my-production-ready-containerized-three-tier-on-aws/monitoring-design/</loc>
+    <loc>/fullstack-ecommerce-bookshop/cicd-frontend/</loc>
+  </url><url>
+    <loc>/fullstack-ecommerce-bookshop/dns-record-cf/</loc>
+  </url><url>
+    <loc>/fullstack-ecommerce-bookshop/monitoring-design/</loc>
   </url><url>
     <loc>/</loc>
     <priority>0</priority>

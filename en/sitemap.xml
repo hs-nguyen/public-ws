@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>/fullstack-ecommerce-bookshop/network-design/</loc>
+    <loc>/fullstack-ecommerce-bookshop/deploy-infrastructure-use-terraform/</loc>
   </url><url>
     <loc>/fullstack-ecommerce-bookshop/</loc>
     <xhtml:link
@@ -16,25 +16,17 @@
                 href="/fullstack-ecommerce-bookshop/"
                 />
   </url><url>
-    <loc>/fullstack-ecommerce-bookshop/security-design/</loc>
-  </url><url>
-    <loc>/fullstack-ecommerce-bookshop/databases/</loc>
-  </url><url>
-    <loc>/fullstack-ecommerce-bookshop/application-load-balancer/</loc>
-  </url><url>
-    <loc>/fullstack-ecommerce-bookshop/ecs-cluster/</loc>
-  </url><url>
-    <loc>/fullstack-ecommerce-bookshop/deploy-backend-service/</loc>
+    <loc>/cost-optimization-with-http-compression-cloudfront/</loc>
   </url><url>
     <loc>/fullstack-ecommerce-bookshop/migrations-and-seed-data/</loc>
   </url><url>
     <loc>/fullstack-ecommerce-bookshop/dns-record-alb/</loc>
   </url><url>
-    <loc>/fullstack-ecommerce-bookshop/deploy-frontend-use-s3-and-cloudfront/</loc>
-  </url><url>
     <loc>/fullstack-ecommerce-bookshop/authenticate-github-action/</loc>
   </url><url>
     <loc>/fullstack-ecommerce-bookshop/cicd-backend/</loc>
+  </url><url>
+    <loc>/fullstack-ecommerce-bookshop/deploy-frontend-use-s3-and-cloudfront/</loc>
   </url><url>
     <loc>/fullstack-ecommerce-bookshop/cicd-frontend/</loc>
   </url><url>

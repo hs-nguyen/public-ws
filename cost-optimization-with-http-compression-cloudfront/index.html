@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Implement to authenticate GitHub Actions on AWS using OIDC Identity Provider  :: Nguyễn Hữu Sáng - Workshops</title>
+    <title>Cost optimize with Cloudfront http compression :: Nguyễn Hữu Sáng - Workshops</title>
 
     
     <link href="/css/nucleus.css?1777800342" rel="stylesheet">
@@ -36,7 +36,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/fullstack-ecommerce-bookshop/authenticate-github-action/">
+  <body class="" data-url="/cost-optimization-with-http-compression-cloudfront/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -83,7 +83,7 @@
   
     
     <li data-nav-id="/fullstack-ecommerce-bookshop/" title="Project 1: Fullstack Ecommerce App Deploy on AWS" class="dd-item 
-        parent
+        
         
         
         ">
@@ -198,8 +198,8 @@
   
     
     <li data-nav-id="/fullstack-ecommerce-bookshop/authenticate-github-action/" title="Implement to authenticate GitHub Actions on AWS using OIDC Identity Provider " class="dd-item 
-        parent
-        active
+        
+        
         
         ">
       <a href="/fullstack-ecommerce-bookshop/authenticate-github-action/">
@@ -373,8 +373,8 @@
   
     
     <li data-nav-id="/cost-optimization-with-http-compression-cloudfront/" title="Cost optimize with Cloudfront http compression" class="dd-item 
-        
-        
+        parent
+        active
         
         ">
       <a href="/cost-optimization-with-http-compression-cloudfront/">
@@ -429,7 +429,7 @@
                   
                     
                     
-                      <option id="en" value="/fullstack-ecommerce-bookshop/authenticate-github-action/" selected>English</option>
+                      <option id="en" value="/cost-optimization-with-http-compression-cloudfront/" selected>English</option>
                     
                   
               
@@ -520,13 +520,7 @@
             
           
           
-            
-            
-          
-          
-            <a href='/'></a> > <a href='/fullstack-ecommerce-bookshop/'>Project 1: Fullstack Ecommerce App Deploy on AWS</a> > Implement to authenticate GitHub Actions on AWS using OIDC Identity Provider 
-          
-        
+            <a href='/'></a> > Cost optimize with Cloudfront http compression
           
         
           
@@ -537,7 +531,23 @@
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#research-outline-cost-optimization-with-cloudfronts-http-compression">Research Outline: Cost Optimization with CloudFront&rsquo;s HTTP Compression</a>
+      <ul>
+        <li><a href="#1-foundation-how-cloudfront-compression-works">1. Foundation: How CloudFront Compression Works</a></li>
+        <li><a href="#2-the-cost-mechanics-core-of-the-research">2. The Cost Mechanics (Core of the Research)</a></li>
+        <li><a href="#3-brotli-vs-gzip-the-cost-performance-tradeoff">3. Brotli vs Gzip: The Cost-Performance Tradeoff</a></li>
+        <li><a href="#4-common-misconfigurations-that-increase-costs">4. Common Misconfigurations That Increase Costs</a></li>
+        <li><a href="#5-practical-configuration-guide">5. Practical Configuration Guide</a></li>
+        <li><a href="#6-measurement--validation">6. Measurement &amp; Validation</a></li>
+        <li><a href="#7-advanced-topics-to-stand-out">7. Advanced Topics (to stand out)</a></li>
+        <li><a href="#suggested-article-structure">Suggested Article Structure</a></li>
+        <li><a href="#differentiators-to-make-your-research-stand-out">Differentiators to Make Your Research Stand Out</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
     </div>
 </div>
 
@@ -553,7 +563,7 @@
           
             <h1>
               
-              Implement to authenticate GitHub Actions on AWS using OIDC Identity Provider 
+              Cost optimize with Cloudfront http compression
             </h1>
           
 
@@ -561,7 +571,118 @@
 
 
 
-	<p><img src="/images/project1/github-authen.gif" alt="architect"></p>
+	<h1 id="cost-optimize-with-cloudfront-http-compression">Cost optimize with Cloudfront http compression</h1>
+<h2 id="research-outline-cost-optimization-with-cloudfronts-http-compression">Research Outline: Cost Optimization with CloudFront&rsquo;s HTTP Compression</h2>
+<h3 id="1-foundation-how-cloudfront-compression-works">1. Foundation: How CloudFront Compression Works</h3>
+<p>Key areas to cover:</p>
+<ul>
+<li>CloudFront supports two compression algorithms: Gzip and Brotli</li>
+<li>Compression can happen at two points:
+<ul>
+<li><strong>CloudFront compresses</strong> the response itself (if origin doesn&rsquo;t)</li>
+<li><strong>Origin compresses</strong> and CloudFront passes it through</li>
+</ul>
+</li>
+<li>The Accept-Encoding header negotiation flow</li>
+<li>CloudFront&rsquo;s minimum file size threshold (currently 1,000 bytes) and maximum (10 MB)</li>
+<li>Which content types CloudFront will and won&rsquo;t compress (it only compresses specific MIME types)</li>
+</ul>
+<p>Suggested sources:</p>
+<ul>
+<li>[AWS CloudFront compression docs](<a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/">https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/</a>
+ServingCompressedFiles.html)</li>
+<li>AWS whitepapers on content delivery</li>
+</ul>
+<p>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</p>
+<h3 id="2-the-cost-mechanics-core-of-the-research">2. The Cost Mechanics (Core of the Research)</h3>
+<p>This is where you differentiate your article. Break down exactly where money is saved or lost:</p>
+<p>Data Transfer costs:</p>
+<ul>
+<li>CloudFront charges for bytes transferred out to viewers — compression directly reduces this</li>
+<li>CloudFront also charges for bytes transferred from origin — if origin compresses, this is also reduced</li>
+<li>Brotli typically achieves 15–25% better compression than Gzip for text assets</li>
+</ul>
+<p>Request costs:</p>
+<ul>
+<li>Compression doesn&rsquo;t affect per-request pricing, but it can improve cache hit ratios indirectly</li>
+</ul>
+<p>Origin shield / regional edge cache:</p>
+<ul>
+<li>If you use Origin Shield, compressed responses cached there reduce origin fetch costs</li>
+</ul>
+<p>Concrete cost model to build:
+Savings = (Uncompressed size - Compressed size) × Data transfer rate × Request volume</p>
+<p>Build a simple table showing savings at different traffic scales (10 GB/month, 1 TB/month, 10 TB/month).</p>
+<p>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</p>
+<h3 id="3-brotli-vs-gzip-the-cost-performance-tradeoff">3. Brotli vs Gzip: The Cost-Performance Tradeoff</h3>
+<ul>
+<li>Brotli has higher CPU cost to compress but better ratios — relevant if CloudFront is doing the compression</li>
+<li>CloudFront compresses at the edge, so CPU cost is AWS&rsquo;s problem, not yours</li>
+<li>Brotli is only served over HTTPS (CloudFront enforces this)</li>
+<li>Cache behavior: CloudFront caches separately for each encoding — understand the cache key implications</li>
+</ul>
+<p>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</p>
+<h3 id="4-common-misconfigurations-that-increase-costs">4. Common Misconfigurations That Increase Costs</h3>
+<p>This section will resonate with practitioners:</p>
+<ul>
+<li><strong>Double compression</strong>: Origin compresses + CloudFront tries to compress again → wasted CPU, possible corruption</li>
+<li><strong>Not enabling compression at all</strong>: Many distributions have it disabled by default on older cache behaviors</li>
+<li><strong>Compressing already-compressed assets</strong>: Images (JPEG, PNG, WebP), videos, ZIP files — compressing these wastes CPU
+and can slightly increase size</li>
+<li><strong>Cache behavior misconfiguration</strong>: Not forwarding Accept-Encoding correctly, causing cache misses or serving wrong
+encoding</li>
+<li><strong>Small files below threshold</strong>: Files under 1,000 bytes won&rsquo;t be compressed — don&rsquo;t over-engineer for these</li>
+</ul>
+<p>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</p>
+<h3 id="5-practical-configuration-guide">5. Practical Configuration Guide</h3>
+<p>Walk through the exact steps:</p>
+<ol>
+<li>Enable compression in CloudFront cache behavior (console + CloudFormation/Terraform examples)</li>
+<li>Configure origin to set correct Content-Type headers (compression is MIME-type gated)</li>
+<li>Set Vary: Accept-Encoding on origin responses</li>
+<li>Use Cache Policies correctly — the managed CachingOptimized policy handles Accept-Encoding properly</li>
+<li>Verify with curl -H &ldquo;Accept-Encoding: br,gzip&rdquo; -I <a href="https://your-distribution.cloudfront.net/file.js">https://your-distribution.cloudfront.net/file.js</a></li>
+</ol>
+<p>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</p>
+<h3 id="6-measurement--validation">6. Measurement &amp; Validation</h3>
+<p>Show readers how to prove the savings:</p>
+<ul>
+<li><strong>CloudWatch metrics</strong>: BytesDownloaded before and after enabling compression</li>
+<li><strong>CloudFront access logs</strong>: Compare cs-bytes and sc-bytes fields</li>
+<li><strong>AWS Cost Explorer</strong>: Filter by CloudFront data transfer to see trend</li>
+<li><strong>Real User Monitoring (RUM)</strong>: Page load time improvements as a secondary benefit</li>
+</ul>
+<p>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</p>
+<h3 id="7-advanced-topics-to-stand-out">7. Advanced Topics (to stand out)</h3>
+<ul>
+<li><strong>Lambda@Edge / CloudFront Functions</strong>: Can you compress dynamically generated responses? (Yes, with caveats)</li>
+<li><strong>Compression + HTTP/2 and HTTP/3</strong>: How multiplexing interacts with compression benefits</li>
+<li><strong>S3 origin pre-compression</strong>: Pre-compressing assets and storing .gz/.br variants in S3, then serving via
+Content-Encoding header — bypasses CloudFront&rsquo;s compression entirely and gives you control over compression level</li>
+<li><strong>Savings Plans and Reserved Capacity</strong>: Does compression affect committed usage calculations?</li>
+</ul>
+<p>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</p>
+<h3 id="suggested-article-structure">Suggested Article Structure</h3>
+<ol>
+<li>Introduction — why compression matters for cost (hook with a real number, e.g., &ldquo;compressing 1 TB/month saves ~$X&rdquo;)</li>
+<li>How CloudFront compression works (technical foundation)</li>
+<li>The cost math (your original analysis)</li>
+<li>Brotli vs Gzip decision guide</li>
+<li>Configuration walkthrough</li>
+<li>Pitfalls to avoid</li>
+<li>How to measure your savings</li>
+<li>Advanced patterns</li>
+</ol>
+<p>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</p>
+<h3 id="differentiators-to-make-your-research-stand-out">Differentiators to Make Your Research Stand Out</h3>
+<ul>
+<li><strong>Run actual benchmarks</strong>: Compress a representative set of web assets (HTML, CSS, JS, JSON) with both algorithms and
+publish the ratios</li>
+<li><strong>Build a cost calculator</strong>: A simple spreadsheet or web tool where readers input their traffic volume and see
+estimated savings</li>
+<li><strong>Include real CloudFront pricing numbers</strong>: Use the current AWS pricing page and show the math explicitly</li>
+<li><strong>Test the edge cases</strong>: What happens with partial content (range requests)? What about streaming responses?</li>
+</ul>
 
 
 
@@ -602,6 +723,8 @@
             
                 
                     
+                        
+                        
                     
                 
                 
@@ -612,25 +735,6 @@
                     
                     
 
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
                     
                         
             
@@ -669,7 +773,6 @@
             
                 
                     
-                    
                 
                 
 
@@ -686,8 +789,21 @@
             
                 
                     
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
                         
-                        
+            
+            
+                
                     
                 
                 
@@ -771,6 +887,7 @@
             
             
                 
+                    
                     
                 
                 
@@ -792,10 +909,10 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="/fullstack-ecommerce-bookshop/dns-record-alb/" title="Create a DNS record to point an ALB using alias"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/fullstack-ecommerce-bookshop/monitoring-design/" title="Design monitoring system of ECS Cluster"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/fullstack-ecommerce-bookshop/cicd-backend/" title="GitHub Actions CI/CD for backend services" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/fullstack-ecommerce-bookshop/" title="Project 1: Fullstack Ecommerce App Deploy on AWS" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

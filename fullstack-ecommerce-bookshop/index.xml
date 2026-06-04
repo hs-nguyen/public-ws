@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Project 1: Fullstack Ecommerce App Deploy on AWS on Nguyễn Hữu Sáng - Workshops</title>
+    <title>Project 1: Fullstack Ecommerce App Deploy on AWS on Nguyễn Hữu Sáng - Portfolio</title>
     <link>/fullstack-ecommerce-bookshop/</link>
-    <description>Recent content in Project 1: Fullstack Ecommerce App Deploy on AWS on Nguyễn Hữu Sáng - Workshops</description>
+    <description>Recent content in Project 1: Fullstack Ecommerce App Deploy on AWS on Nguyễn Hữu Sáng - Portfolio</description>
     <generator>Hugo -- gohugo.io</generator><atom:link href="/fullstack-ecommerce-bookshop/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

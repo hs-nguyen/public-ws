@@ -1,17 +1,24 @@
 [
 {
-	"uri": "/fullstack-ecommerce-bookshop/deploy-infrastructure-use-terraform/",
-	"title": "Build and deploy infrastructure using Terraform",
+	"uri": "/multi-region-vpc-failover/",
+	"title": "Multi Region VPC and Failover",
 	"tags": [],
 	"description": "",
-	"content": "Terraform Structure "
+	"content": "1. Project Overview 2. Architecture Design Document 3. How to deploy   "
 },
 {
-	"uri": "/fullstack-ecommerce-bookshop/",
-	"title": "Project 1: Fullstack Ecommerce App Deploy on AWS",
+	"uri": "/multi-region-vpc-failover/project-overview/",
+	"title": "Project Overview",
 	"tags": [],
 	"description": "",
-	"content": "Architecture Overview Project Description    1. Build and deploy infrastructure using Terraform 2. Implement migrations schema and seed data to DB 3. Create a DNS record to point an ALB using alias  4. Implement to authenticate GitHub Actions on AWS using OIDC Identity Provider 5. GitHub Actions CI/CD for backend services 6. Deploy Frontend using S3 and CloudFront 7. GitHub Actions CI/CD for frontend 8. Create a DNS record to point a CloudFront using alias 9. Design monitoring system for ECS Cluster "
+	"content": "In this project, we will design and implement a multi-region VPC architecture with failover capabilities. The architecture will leverage AWS services such as Amazon VPC, AWS Transit Gateway, Amazon RDS, and Amazon Route 53 to create a resilient infrastructure that can withstand failures and ensure high availability for applications running in the cloud.\n1.1 Executive Summary  The multi-region VPC architecture with failover is designed to provide high availability and disaster recovery capabilities for applications running in AWS. By leveraging multiple AWS services, we can create a resilient infrastructure that can withstand failures and ensure continuous operation. The architecture includes the following key components: Tech Stacks: IAM, VPC, RDS, ALB, EC2, Transit Gateway, Auto Scaling Group, Systems Manager, CloudWatch, SNS, Route 53.  1.2 Project Goals "
+},
+{
+	"uri": "/multi-region-vpc-failover/architecture-design-document/",
+	"title": "Architecture Design Document",
+	"tags": [],
+	"description": "",
+	"content": ""
 },
 {
 	"uri": "/cost-optimization-with-http-compression-cloudfront/",
@@ -21,57 +28,57 @@
 	"content": "Cost optimize with Cloudfront http compression Research Outline: Cost Optimization with CloudFront\u0026rsquo;s HTTP Compression 1. Foundation: How CloudFront Compression Works Key areas to cover:\n CloudFront supports two compression algorithms: Gzip and Brotli Compression can happen at two points:  CloudFront compresses the response itself (if origin doesn\u0026rsquo;t) Origin compresses and CloudFront passes it through   The Accept-Encoding header negotiation flow CloudFront\u0026rsquo;s minimum file size threshold (currently 1,000 bytes) and maximum (10 MB) Which content types CloudFront will and won\u0026rsquo;t compress (it only compresses specific MIME types)  Suggested sources:\n [AWS CloudFront compression docs](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/ ServingCompressedFiles.html) AWS whitepapers on content delivery  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n2. The Cost Mechanics (Core of the Research) This is where you differentiate your article. Break down exactly where money is saved or lost:\nData Transfer costs:\n CloudFront charges for bytes transferred out to viewers — compression directly reduces this CloudFront also charges for bytes transferred from origin — if origin compresses, this is also reduced Brotli typically achieves 15–25% better compression than Gzip for text assets  Request costs:\n Compression doesn\u0026rsquo;t affect per-request pricing, but it can improve cache hit ratios indirectly  Origin shield / regional edge cache:\n If you use Origin Shield, compressed responses cached there reduce origin fetch costs  Concrete cost model to build: Savings = (Uncompressed size - Compressed size) × Data transfer rate × Request volume\nBuild a simple table showing savings at different traffic scales (10 GB/month, 1 TB/month, 10 TB/month).\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n3. Brotli vs Gzip: The Cost-Performance Tradeoff  Brotli has higher CPU cost to compress but better ratios — relevant if CloudFront is doing the compression CloudFront compresses at the edge, so CPU cost is AWS\u0026rsquo;s problem, not yours Brotli is only served over HTTPS (CloudFront enforces this) Cache behavior: CloudFront caches separately for each encoding — understand the cache key implications  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n4. Common Misconfigurations That Increase Costs This section will resonate with practitioners:\n Double compression: Origin compresses + CloudFront tries to compress again → wasted CPU, possible corruption Not enabling compression at all: Many distributions have it disabled by default on older cache behaviors Compressing already-compressed assets: Images (JPEG, PNG, WebP), videos, ZIP files — compressing these wastes CPU and can slightly increase size Cache behavior misconfiguration: Not forwarding Accept-Encoding correctly, causing cache misses or serving wrong encoding Small files below threshold: Files under 1,000 bytes won\u0026rsquo;t be compressed — don\u0026rsquo;t over-engineer for these  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n5. Practical Configuration Guide Walk through the exact steps:\n Enable compression in CloudFront cache behavior (console + CloudFormation/Terraform examples) Configure origin to set correct Content-Type headers (compression is MIME-type gated) Set Vary: Accept-Encoding on origin responses Use Cache Policies correctly — the managed CachingOptimized policy handles Accept-Encoding properly Verify with curl -H \u0026ldquo;Accept-Encoding: br,gzip\u0026rdquo; -I https://your-distribution.cloudfront.net/file.js  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n6. Measurement \u0026amp; Validation Show readers how to prove the savings:\n CloudWatch metrics: BytesDownloaded before and after enabling compression CloudFront access logs: Compare cs-bytes and sc-bytes fields AWS Cost Explorer: Filter by CloudFront data transfer to see trend Real User Monitoring (RUM): Page load time improvements as a secondary benefit  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n7. Advanced Topics (to stand out)  Lambda@Edge / CloudFront Functions: Can you compress dynamically generated responses? (Yes, with caveats) Compression + HTTP/2 and HTTP/3: How multiplexing interacts with compression benefits S3 origin pre-compression: Pre-compressing assets and storing .gz/.br variants in S3, then serving via Content-Encoding header — bypasses CloudFront\u0026rsquo;s compression entirely and gives you control over compression level Savings Plans and Reserved Capacity: Does compression affect committed usage calculations?  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\nSuggested Article Structure  Introduction — why compression matters for cost (hook with a real number, e.g., \u0026ldquo;compressing 1 TB/month saves ~$X\u0026rdquo;) How CloudFront compression works (technical foundation) The cost math (your original analysis) Brotli vs Gzip decision guide Configuration walkthrough Pitfalls to avoid How to measure your savings Advanced patterns  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\nDifferentiators to Make Your Research Stand Out  Run actual benchmarks: Compress a representative set of web assets (HTML, CSS, JS, JSON) with both algorithms and publish the ratios Build a cost calculator: A simple spreadsheet or web tool where readers input their traffic volume and see estimated savings Include real CloudFront pricing numbers: Use the current AWS pricing page and show the math explicitly Test the edge cases: What happens with partial content (range requests)? What about streaming responses?  "
 },
 {
-	"uri": "/fullstack-ecommerce-bookshop/migrations-and-seed-data/",
-	"title": "Implement migrations schema and seed data to DB",
+	"uri": "/multi-region-vpc-failover/deployment-steps/build-vpc-both-two-regions/",
+	"title": "Build VPCs both two regions",
 	"tags": [],
 	"description": "",
 	"content": ""
 },
 {
-	"uri": "/fullstack-ecommerce-bookshop/dns-record-alb/",
-	"title": "Create a DNS record to point an ALB using alias",
+	"uri": "/multi-region-vpc-failover/deployment-steps/config-route53-healthcheck-failover/",
+	"title": "Configure Route 53 Health Check Failover Routing",
 	"tags": [],
 	"description": "",
 	"content": ""
 },
 {
-	"uri": "/fullstack-ecommerce-bookshop/authenticate-github-action/",
-	"title": "Implement to authenticate GitHub Actions on AWS using OIDC Identity Provider ",
+	"uri": "/multi-region-vpc-failover/deployment-steps/create-cross-region-rds-replica/",
+	"title": "Create Cross Region Read Replicate Secondary Region",
 	"tags": [],
 	"description": "",
 	"content": ""
 },
 {
-	"uri": "/fullstack-ecommerce-bookshop/cicd-backend/",
-	"title": "GitHub Actions CI/CD for backend services",
+	"uri": "/multi-region-vpc-failover/deployment-steps/create-rds-primary-us-east-1/",
+	"title": "Create RDS Primary Region",
 	"tags": [],
 	"description": "",
 	"content": ""
 },
 {
-	"uri": "/fullstack-ecommerce-bookshop/deploy-frontend-use-s3-and-cloudfront/",
-	"title": "Deploy frontend using S3 and CloudFront",
+	"uri": "/multi-region-vpc-failover/deployment-steps/deploy-application-layer-ec2-and-alb/",
+	"title": "Deploy Application Layer EC2 and ALB",
 	"tags": [],
 	"description": "",
 	"content": ""
 },
 {
-	"uri": "/fullstack-ecommerce-bookshop/cicd-frontend/",
-	"title": "GitHub Actions CI/CD for Frontend",
+	"uri": "/multi-region-vpc-failover/deployment-steps/",
+	"title": "Deployment Steps",
+	"tags": [],
+	"description": "",
+	"content": "Step-by-step implement 1️⃣ Build VPCs both two regions\n2️⃣ Transit Gateway Cross Region Peering\n3️⃣ Deploy Application Layer EC2 and ALB\n4️⃣ Create RDS Primary Region\n5️⃣ Create Cross Region Read Replicate Secondary Region\n6️⃣ Configure Route 53 Health Check Failover Routing\n7️⃣ Failover Testing Route 53\n"
+},
+{
+	"uri": "/multi-region-vpc-failover/deployment-steps/failover-testing-route-53/",
+	"title": "Failover Testing Route 53",
 	"tags": [],
 	"description": "",
 	"content": ""
 },
 {
-	"uri": "/fullstack-ecommerce-bookshop/dns-record-cf/",
-	"title": "Create a DNS record to point a CloudFront using alias",
-	"tags": [],
-	"description": "",
-	"content": ""
-},
-{
-	"uri": "/fullstack-ecommerce-bookshop/monitoring-design/",
-	"title": "Design monitoring system of ECS Cluster",
+	"uri": "/multi-region-vpc-failover/deployment-steps/transit-gateway-cross-region-peering/",
+	"title": "Transit Gateway Cross Region Peering",
 	"tags": [],
 	"description": "",
 	"content": ""
@@ -81,7 +88,7 @@
 	"title": "",
 	"tags": [],
 	"description": "",
-	"content": "\n📫 Connect with me: Email | LinkedIn\n✍ AWS Builder Center: https://builder.aws.com/community/@nguyensangscom\nPersonal projects 🚀\nProject 1: Fullstack Ecommerce App Deploy on AWS Cost optimize with Cloudfront http compression\n"
+	"content": "\n📫 Connect with me: Email | LinkedIn\n✍ AWS Builder Center: https://builder.aws.com/community/@nguyensangscom\n🚀 Personal projects\n1️⃣ Multi-Region VPC \u0026amp; Failover Project\n📑 Cost optimize with Cloudfront http compression\n"
 },
 {
 	"uri": "/categories/",

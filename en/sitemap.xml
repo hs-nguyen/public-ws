@@ -2,6 +2,8 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>/multi-region-vpc-failover/deployment-steps/build-vpc-both-two-regions/</loc>
+  </url><url>
     <loc>/multi-region-vpc-failover/</loc>
   </url><url>
     <loc>/multi-region-vpc-failover/project-overview/</loc>
@@ -10,21 +12,19 @@
   </url><url>
     <loc>/cost-optimization-with-http-compression-cloudfront/</loc>
   </url><url>
-    <loc>/multi-region-vpc-failover/deployment-steps/build-vpc-both-two-regions/</loc>
-  </url><url>
-    <loc>/multi-region-vpc-failover/deployment-steps/config-route53-healthcheck-failover/</loc>
-  </url><url>
-    <loc>/multi-region-vpc-failover/deployment-steps/create-cross-region-rds-replica/</loc>
-  </url><url>
-    <loc>/multi-region-vpc-failover/deployment-steps/create-rds-primary-us-east-1/</loc>
+    <loc>/multi-region-vpc-failover/deployment-steps/transit-gateway-cross-region-peering/</loc>
   </url><url>
     <loc>/multi-region-vpc-failover/deployment-steps/deploy-application-layer-ec2-and-alb/</loc>
   </url><url>
     <loc>/multi-region-vpc-failover/deployment-steps/</loc>
   </url><url>
-    <loc>/multi-region-vpc-failover/deployment-steps/failover-testing-route-53/</loc>
+    <loc>/multi-region-vpc-failover/deployment-steps/create-rds-primary-us-east-1/</loc>
   </url><url>
-    <loc>/multi-region-vpc-failover/deployment-steps/transit-gateway-cross-region-peering/</loc>
+    <loc>/multi-region-vpc-failover/deployment-steps/create-cross-region-rds-replica/</loc>
+  </url><url>
+    <loc>/multi-region-vpc-failover/deployment-steps/config-route53-healthcheck-failover/</loc>
+  </url><url>
+    <loc>/multi-region-vpc-failover/deployment-steps/failover-testing-route-53/</loc>
   </url><url>
     <loc>/</loc>
     <priority>0</priority>
